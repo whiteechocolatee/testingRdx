@@ -1,0 +1,34 @@
+.content {
+  width: 1200px;
+  min-height: 800px;
+  margin: 50px auto;
+  background-color: #f1f1f1;
+  border-radius: 20px;
+  padding: 20px;
+  border: 1px solid teal;
+  display: flex;
+  justify-content: space-between;
+}
+
+.wrap {
+  margin-top: 40px;
+  width: 100%;
+  height: 70%;
+  background-color: #1fd560;
+  border-radius: 20px;
+  border: 1px solid darkblue;
+  display: flex;
+  align-items: flex-end;
+}
+
+.main-img {
+  width: 90%;
+  height: auto;
+  padding: 0 auto;
+}
+
+.left,
+.right {
+  width: 49%;
+  height: 100%;
+}
