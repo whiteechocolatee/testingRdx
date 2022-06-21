@@ -1,0 +1,21 @@
+.btn-controls {
+  width: 200px;
+  display: flex;
+  justify-content: space-around;
+  margin: 20px; 
+  align-items: flex-start;
+}
+
+.btn-controls button {
+  width: 90px;
+  background: transparent;
+  border: 1px dashed green;
+  padding: 10px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.btn-controls button:hover {
+  color: blue;
+}

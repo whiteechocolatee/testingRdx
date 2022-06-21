@@ -1,0 +1,16 @@
+.text-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.text-container input {
+  width: 95%;
+  font-size: 20px;
+  height: 30px;
+}
+
+.text-container div {
+  font-size: 25px;
+  cursor: pointer;
+}
