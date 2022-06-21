@@ -19,7 +19,9 @@ function Comments() {
     const handleInput = (e)=> {
         setTextComment(e.target.value)
     }
-    
+
+    console.log('comments =>',comments);
+
     const handleSubmit = (e)=> {
         e.preventDefault()
         const id = uniqid()
