@@ -1,6 +1,7 @@
 import './App.css';
 import Comments from './components/Comments';
 import Likes from './components/Likes';
+import Spinner from './components/Spinner';
 import Title from './components/Title';
 
 
@@ -20,6 +21,7 @@ function App() {
       </div>
       <div className="right">
         <Comments/>
+        <Spinner/>
       </div>
     </div>
   );

@@ -8,7 +8,11 @@ import { rootReducer } from './redux/rootReducer';
 import { Provider } from 'react-redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
 
-const store = createStore(rootReducer,composeWithDevTools(applyMiddleware(thunk)));
+const store = createStore
+    (
+      rootReducer,
+      composeWithDevTools(applyMiddleware(thunk))
+    );
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

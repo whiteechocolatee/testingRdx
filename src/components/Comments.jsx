@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
 import SingleComment from './SingleComment';
 import { useDispatch, useSelector } from 'react-redux';
-import { commentCreate } from '../redux/actions';
+import { commentCreate, commentLoad } from '../redux/actions';
 import uniqid from 'uniqid'
+import { useEffect } from 'react';
 
 
 function Comments() {
@@ -20,6 +21,9 @@ function Comments() {
         setTextComment(e.target.value)
     }
 
+    useEffect(()=>{
+        dispatch(commentLoad())
+    },[])
 
     const handleSubmit = (e)=> {
         e.preventDefault()

@@ -32,3 +32,8 @@
   width: 49%;
   height: 100%;
 }
+
+
+.spinner svg{
+  margin: 200px auto;
+}
