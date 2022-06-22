@@ -3,11 +3,25 @@ import Comments from './components/Comments';
 import Likes from './components/Likes';
 import Spinner from './components/Spinner';
 import Title from './components/Title';
+import { useSelector } from 'react-redux';
+import { loaderReducer } from './redux/loaderReducer';
 
 
 function App() {
+  
+  let error = useSelector(state=>{
+    const {loaderReducer:{error}} = state
+    return error
+  })
+
+
   return (
     <div className="content">
+      {error && (
+        <div className="error_message">
+          {error}
+        </div>
+      )}
       <div className="left">
         <div className="wrap">
           <div className="img-content">

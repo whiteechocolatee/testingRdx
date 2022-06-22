@@ -13,7 +13,7 @@
 .wrap {
   margin-top: 40px;
   width: 100%;
-  height: 70%;
+  height: 550px;
   background-color: #1fd560;
   border-radius: 20px;
   border: 1px solid darkblue;
@@ -33,7 +33,16 @@
   height: 100%;
 }
 
-
-.spinner svg{
+.spinner svg {
   margin: 200px auto;
+}
+
+.error_message {
+  width: 100px;
+  height: 20px;
+  background: red;
+  position: absolute;
+  left: 900px;
+  top: 30px;
+  padding: 10px;
 }

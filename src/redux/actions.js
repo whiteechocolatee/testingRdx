@@ -7,7 +7,9 @@ import {
     COMMENT_DELETE, 
     COMMENT_LOAD,
     LOADER_ON,
-    LOADER_OFF
+    LOADER_OFF,
+    ERROR_OFF,
+    ERROR_ON,
 } from './types';
 
 export function incrementLikes(){
@@ -67,17 +69,41 @@ export function loaderOff(){
     }
 }
 
+export function errorOn(text){
+    return dispatch =>{
+        dispatch({
+            type:ERROR_ON,
+            text
+        });
+        setTimeout(()=>{
+            dispatch(errorOff())
+            dispatch(loaderOff())
+        },3000)
+    }
+}
+
+export function errorOff(){
+    return {
+        type: ERROR_OFF,
+    }
+}
+
 export function commentLoad(){
     return async fetchingData =>{
-        fetchingData(loaderOn())
-        let response = await fetch('https://jsonplaceholder.typicode.com/comments?_limit=20')
-        let dataJson = await response.json()
-        setTimeout(()=>{
-            fetchingData ({
-                type: COMMENT_LOAD,
-                data: dataJson
-            })
-            fetchingData(loaderOff())
-        },3000)
+        try{
+            fetchingData(loaderOn())
+            let response = await fetch(`https://jsonplaceholder.typicode.com/comments?_limit=20`)
+            let dataJson = await response.json()
+
+            setTimeout(()=>{
+                fetchingData ({
+                    type: COMMENT_LOAD,
+                    data: dataJson
+                })
+                fetchingData(loaderOff())
+            },3000)
+        }catch(err){
+            fetchingData(errorOn('Ошибка API'))
+        }
     }
 }
