@@ -1,4 +1,4 @@
-import { COMMENT_CREATE, COMMENT_UPDATE } from './types';
+import { COMMENT_CREATE, COMMENT_DELETE, COMMENT_UPDATE } from './types';
 
 const initialState = {
     comments : []
@@ -29,7 +29,23 @@ export const commentsReducer = (state = initialState,action) =>{
             return {
                 ...state,
                 comments : nextComments 
-            }
+            }      
+        case COMMENT_DELETE:
+            return(()=>{
+                const {data:{id}} = action
+                const {comments} = state
+                console.log('looking action.data.id >>>', id);
+                let itemIndex = comments.findIndex(res=> res.id === id)
+
+                const newComments = [
+                    ...comments.slice(0,itemIndex),
+                    ...comments.slice(itemIndex+1)
+                ]
+                return {
+                    ...state,
+                    comments : newComments 
+                }
+            })()
             
         default:
             return state

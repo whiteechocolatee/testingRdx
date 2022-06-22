@@ -20,7 +20,6 @@ function Comments() {
         setTextComment(e.target.value)
     }
 
-    console.log('comments =>',comments);
 
     const handleSubmit = (e)=> {
         e.preventDefault()
